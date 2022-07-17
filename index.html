@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>A13: 你的社群名單</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="js-loading" class="c-loading">
+    <div class="c-loading__inner">
+      <div class="c-loading__spinner">
+        <div class="spinner-border c-loading__spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <nav id="js-navbar" class="navbar navbar-expand-md fixed-top c-navbar is-top">
+    <div class="container">
+      <a class="c-navbar__logo" href="index.html">BFF</a>
+      <button class="navbar-toggler c-navbar__toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="c-navbar__toggler-line"></span>
+        <span class="c-navbar__toggler-line"></span>
+        <span class="c-navbar__toggler-line"></span>
+      </button>
+      <div class="collapse navbar-collapse c-navbar__collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link c-navbar__nav-link active" aria-current="page" href="index.html" aria-label="認識新朋友" title="認識新朋友">認識新朋友</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link c-navbar__nav-link" href="favorite.html" aria-label="正在關注" title="正在關注">正在關注</a>
+          </li>
+        </ul>
+
+        <button type="button" class="c-btn is-main has-shadow" data-bs-toggle="modal" data-bs-target="#loginAndRegisterModal" aria-label="加入" title="加入">
+          加入
+        </button>
+        <div class="c-navbar--bottom-line"></div>
+      </div>
+    </div>
+  </nav>
+  
+  <main class="l-main">
+    <header class="c-index-banner">
+      <div class="container"></div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-md-6 position-relative d-flex justify-content-center">
+            <div class="c-index-banner__infos">
+              <h1 class="c-index-banner__title my-0">拓展你的社交圈，認識有趣的新朋友!</h1>
+              <h2 class="c-index-banner__subtitle mt-3 mb-5"><span>BFF 最多用戶的社群平台</span></h2>
+              <a href="#article-user-list" title="跳到認識新朋友區塊" aria-label="跳到認識新朋友區塊" class="c-btn is-default has-shadow">
+                認識新朋友
+              </a>
+              <button type="button" class="c-btn is-main has-shadow ms-2" data-bs-toggle="modal" data-bs-target="#loginAndRegisterModal">
+                加入
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 d-none d-md-block">
+            <div class="ratio ratio-16x9"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c-index-banner__carousel">
+        <div class="c-index-banner__carousel-inner">
+          <div class="ratio ratio-16x9 c-index-banner__carousel-ratio">
+            <div>
+              <div id="index-carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="https://images.pexels.com/photos/708392/pexels-photo-708392.jpeg" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="https://images.pexels.com/photos/745045/pexels-photo-745045.jpeg" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg" alt="Third slide">
+                  </div>
+                </div>
+              </div>
+              <div id="js-photo-time" class="c-index-banner__carousel-time">
+                '22 06 26 10:30
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="c-index-banner__carousel-bgi">
+          <div class="ratio ratio-16x9"></div>
+        </div>
+      </div>
+    </header>
+
+    <article id="article-user-list" class="c-article about-user-list">
+      <div class="container">
+          <header class="mb-5 text-center">
+            <h2 class="c-article__title">認識新朋友!</h2>
+            <h3 class="c-article__subtitle">New Friends</h3>
+          </header>
+          
+          <div class="row mb-3">
+            <div class="col-12 mb-4">
+              <form id="js-search-form">
+                <div class="c-search-bar">
+                  <input id="js-search-input" type="text" class="form-control c-search-bar__control" placeholder="輸入姓名、國籍、性別或年齡..." aria-label="輸入姓名、國籍、性別或年齡...">
+                  <button class="c-search-bar__btn" type="submit" id="js-search-user-btn"><i class="bi bi-search"></i></button>
+                </div>
+              </form>
+            </div>
+            <div class="col-12">
+              <hr class="c-hr">
+            </div>
+            <div class="col-8 mb-3">
+              <p id="js-search-result" class="my-0"></p>
+            </div>
+            <div id="js-change-modes" class="col-4 mb-3 text-end">
+              <div class="c-btn about-change-mode">
+                <button type="button" class="js-change-mode is-active" data-mode="card" title="切換至卡片模式" aria-label="切換至卡片模式"></button>
+                <i class="bi bi-grid-fill"></i>
+              </div>
+              <div class="c-btn about-change-mode">
+                <button type="button" class="js-change-mode" data-mode="list" title="切換至列表模式" aria-label="切換至列表模式"></button>
+                <i class="bi bi-hdd-stack-fill"></i>
+              </div>
+            </div>
+          </div>
+          <div id="js-data-panel" class="row mb-5"></div>
+
+          <ul id="js-pagination" class="pagination justify-content-center c-pagination flex-wrap"></ul>
+      </div>
+    </article>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal fade c-user-modal" id="bs-user-modal" tabindex="-1" aria-labelledby="bsUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+      <div class="modal-content c-user-modal__content">
+        <div id="js-modal-user-bgi" class="modal-body c-user-modal__body">
+          <div class="c-user-modal__infos">
+            <!-- <button type="button" id="js-modal-user-follow" class="c-user-modal__follow-btn" data-id="" data-follow="false" title="關注我" aria-label="關注我" ><i class="bi bi-heart"></i></button> -->
+            <div class="c-user-modal__avatar is-online">
+              <div id="js-modal-user-avatar" class="ratio ratio-1x1 c-user-modal__avatar-ratio id="js-modal-user-avator">
+                <i class="bi bi-person-fill c-user-modal__avatar-icon"></i>
+              </div>
+            </div>
+            <h2 id="js-modal-user-name" class="text-center my-3"> </h2>
+            <ul class="c-user-modal__list">
+              <li id="js-modal-user-gender"></li>
+              <li id="js-modal-user-region"></li>
+              <li id="js-modal-user-birthday"></li>
+              <li id="js-modal-user-email"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal-footer c-user-modal__footer">
+          <button type="button" class="c-user-modal__footer-btn" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  Script  -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
